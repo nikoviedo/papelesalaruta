@@ -1,128 +1,75 @@
 <?php
 get_header();
-
-$home_faqs = [
-    [
-        'q' => '¿Qué papeles me pueden pedir en un control de tránsito en Argentina?',
-        'a' => 'En general: licencia vigente, cédula del vehículo, comprobante de seguro al día, DNI y constancia de VTV/RTO si tu jurisdicción la exige.',
-    ],
-    [
-        'q' => '¿Sirven los documentos digitales desde Mi Argentina?',
-        'a' => 'Sí, la app Mi Argentina permite exhibir licencia, cédula y seguro digital en controles habilitados. Igual conviene chequear requerimientos locales y batería del teléfono.',
-    ],
-    [
-        'q' => '¿Cada cuánto vence la VTV o RTO?',
-        'a' => 'Depende de la provincia, antigüedad del vehículo y normativa local. Revisá nuestra guía de VTV/RTO y el calendario de tu jurisdicción.',
-    ],
-];
 ?>
-<main id="main-content">
-    <section class="hero">
+<main id="main-content" class="landing-home">
+    <section class="hero-banner">
         <div class="container">
-            <h1>Checklist obligatorio para circular en auto o moto en Argentina</h1>
-            <p>Guía rápida, clara y actualizable para tener tus papeles al día: licencia, cédula, seguro, VTV/RTO, matafuegos, balizas y documentación digital en Mi Argentina.</p>
-            <ul class="checklist">
-                <li>Validá qué documentación es obligatoria hoy.</li>
-                <li>Evitá multas por vencimientos.</li>
-                <li>Consultá requisitos por tipo de vehículo y jurisdicción.</li>
-            </ul>
-            <div class="cta-row">
-                <a class="btn btn-primary" href="<?php echo esc_url(home_url('/checklist-auto/')); ?>">Ver checklist auto</a>
-                <a class="btn btn-secondary" href="<?php echo esc_url(home_url('/checklist-moto/')); ?>">Ver checklist moto</a>
+            <div class="hero-grid">
+                <div class="paper-card">
+                    <h1>¡Checklist para Circular en Auto o Moto!</h1>
+                    <p class="hero-subtitle">Todo lo que necesitás para salir a la ruta seguro.</p>
+                    <h2>Revisá tu Documentación Obligatoria:</h2>
+                    <ul class="docs-list">
+                        <li>VTV / RTO Vigente</li>
+                        <li>Seguro del Auto / Moto</li>
+                        <li>Cédula Verde / Azul</li>
+                        <li>Licencia de Conducir</li>
+                        <li>Matafuegos</li>
+                        <li>Balizas Triángulo</li>
+                    </ul>
+                    <a class="btn btn-blue btn-large" href="<?php echo esc_url(home_url('/checklist-auto/')); ?>">¡Recordame los Vencimientos!</a>
+                </div>
+
+                <div class="hero-visuals">
+                    <div class="road-visual">
+                        <div class="vehicle car"></div>
+                        <div class="vehicle moto"></div>
+                    </div>
+                    <div class="mi-app-card">
+                        <div class="phone-mockup">
+                            <span>Mi Argentina</span>
+                            <small>Cédula · Licencia · Seguro</small>
+                        </div>
+                        <div>
+                            <h3>Llevá Todo Digital en Mi Argentina</h3>
+                            <p>Accedé a tus documentos desde el celular.</p>
+                            <a class="btn btn-orange" href="<?php echo esc_url(home_url('/mi-argentina/')); ?>">Ingresá a Mi Argentina</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="container">
-            <h2>Accesos rápidos por tipo de vehículo</h2>
-            <div class="grid cards">
-                <article class="card">
-                    <h3>Checklist Auto</h3>
-                    <p>Todo lo necesario para circular en auto particular: papeles, elementos de seguridad y recomendaciones para ruta.</p>
-                    <a href="<?php echo esc_url(home_url('/checklist-auto/')); ?>">Ir a checklist auto</a>
-                </article>
-                <article class="card">
-                    <h3>Checklist Moto</h3>
-                    <p>Documentación y seguridad para motos: licencia correspondiente, seguro, casco homologado y controles frecuentes.</p>
-                    <a href="<?php echo esc_url(home_url('/checklist-moto/')); ?>">Ir a checklist moto</a>
-                </article>
-            </div>
+    <section class="service-cards">
+        <div class="container cards-3">
+            <article class="promo-card promo-blue">
+                <h3>¡Cotizá tu Seguro Ahora!</h3>
+                <p>Mejores Precios y Beneficios</p>
+                <a class="btn btn-green" href="<?php echo esc_url(home_url('/checklist-auto/')); ?>">Cotizá Online</a>
+            </article>
+            <article class="promo-card promo-sky">
+                <h3>Auxilio y Asistencia 24hs</h3>
+                <p>Servicio en el Momento</p>
+                <a class="btn btn-orange" href="<?php echo esc_url(home_url('/vtv/')); ?>">Solicitá Auxilio</a>
+            </article>
+            <article class="promo-card promo-light">
+                <h3>Gestores y Trámites Vehiculares</h3>
+                <p>¡Todo en un solo lugar!</p>
+                <a class="btn btn-red" href="<?php echo esc_url(home_url('/checklist-moto/')); ?>">Ver Servicios</a>
+            </article>
         </div>
     </section>
 
-    <section>
+    <section class="turno-banner">
         <div class="container">
-            <h2>Documentación digital en Mi Argentina</h2>
-            <p>Si manejás con la app Mi Argentina, podés mostrar documentación digital desde el celular para agilizar controles. Te explicamos cómo tener todo accesible.</p>
-            <a class="btn btn-secondary" href="<?php echo esc_url(home_url('/mi-argentina/')); ?>">Ver guía Mi Argentina</a>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2>VTV / RTO: cuándo te toca y cómo sacar turno</h2>
-            <p>La revisión técnica puede variar por provincia o municipio. Consultá requisitos, vigencias y recomendaciones para aprobar en el primer intento.</p>
-            <a class="btn btn-secondary" href="<?php echo esc_url(home_url('/vtv/')); ?>">Consultar VTV / RTO</a>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2>Recordatorio de vencimientos</h2>
-            <p class="notice">Tip utilitario: agendá recordatorios 30 días antes del vencimiento de licencia, seguro y VTV/RTO para evitar multas y demoras.</p>
-            <div class="grid cards">
-                <article class="card">
-                    <h3>Licencia de conducir</h3>
-                    <p>Verificá la fecha de vencimiento según tu categoría y jurisdicción.</p>
-                </article>
-                <article class="card">
-                    <h3>Seguro automotor</h3>
-                    <p>Comprobá que la póliza y el medio de pago estén al día.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2>Preguntas frecuentes</h2>
-            <?php foreach ($home_faqs as $faq) : ?>
-                <article class="faq-item">
-                    <h3><?php echo esc_html($faq['q']); ?></h3>
-                    <p><?php echo esc_html($faq['a']); ?></p>
-                </article>
-            <?php endforeach; ?>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2>Gestiones rápidas</h2>
-            <div class="grid cards">
-                <?php
-                papelesalaruta_cta(
-                    'Cotizá tu seguro automotor',
-                    'Compará opciones de cobertura y mantené tu constancia vigente para circular tranquilo.',
-                    'Cotizar seguro',
-                    home_url('/checklist-auto/'),
-                    'Ver checklist completo',
-                    home_url('/checklist-auto/')
-                );
-
-                papelesalaruta_cta(
-                    'Sacá turno para VTV / RTO',
-                    'Revisá tu vencimiento y prepará el vehículo antes de presentarte en planta.',
-                    'Sacar turno VTV',
-                    home_url('/vtv/'),
-                    'Ver requisitos',
-                    home_url('/vtv/')
-                );
-                ?>
+            <div class="turno-card">
+                <h2>¡No te Quedes en el Camino!</h2>
+                <p>Turnos de VTV, <strong>Talleres Mecánicos</strong> y más...</p>
+                <a class="btn btn-yellow btn-large" href="<?php echo esc_url(home_url('/vtv/')); ?>">Sacá tu Turno Ahora</a>
             </div>
         </div>
     </section>
 </main>
-<?php papelesalaruta_render_faq_schema($home_faqs); ?>
 <?php
 get_footer();
