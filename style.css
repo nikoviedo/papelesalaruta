@@ -1,0 +1,212 @@
+/*
+Theme Name: Papeles a la Ruta
+Theme URI: https://papelesalaruta.com/
+Author: Equipo Papeles a la Ruta
+Description: Tema WordPress liviano y orientado a SEO para documentación obligatoria vehicular en Argentina.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+Text Domain: papelesalaruta
+*/
+
+:root {
+  --blue: #0c4a8a;
+  --blue-dark: #093769;
+  --orange: #f97316;
+  --orange-dark: #d85c06;
+  --white: #ffffff;
+  --gray-050: #f7f9fc;
+  --gray-100: #e8edf4;
+  --gray-700: #334155;
+  --gray-900: #0f172a;
+  --radius: 12px;
+  --container: 1080px;
+  --space: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--gray-900);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+.site-header {
+  background: var(--blue);
+  color: var(--white);
+  padding: 0.75rem 0;
+}
+
+.site-header a {
+  color: var(--white);
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  padding: 0.8rem 0;
+  color: var(--gray-700);
+}
+
+main section {
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+.hero {
+  background: linear-gradient(130deg, var(--blue) 0%, var(--blue-dark) 100%);
+  color: var(--white);
+  padding: 3rem 0;
+}
+
+.hero p {
+  max-width: 65ch;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.cards {
+  grid-template-columns: 1fr;
+}
+
+.card {
+  background: var(--gray-050);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.checklist {
+  padding-left: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--orange-dark);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: var(--blue-dark);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.notice {
+  background: #fff7ed;
+  border-left: 4px solid var(--orange);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+}
+
+.faq-item + .faq-item {
+  margin-top: 1rem;
+}
+
+.site-footer {
+  background: var(--gray-900);
+  color: var(--white);
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.site-footer a {
+  color: #c7d7ee;
+}
+
+@media (min-width: 720px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
